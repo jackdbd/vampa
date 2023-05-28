@@ -63,3 +63,7 @@ npx changeset status
 ```
 
 4: Commit your changes and push them to the remote repository. The [Changesets Release Action](https://github.com/changesets/action) will take care of publishing all affected packages to npm.js.
+
+In order to work, Changesets Release Action requires that the `GITHUB_TOKEN` has the necessary permissions to create a Pull Request. On the GitHub repo,go to `Settings` → `Actions` → `General` → `Workflow permissions` and enable this checkbox.
+
+![GitHub Workflow permissions required for Changesets Release Action](./assets/images/github-workflow-permissions.png)
