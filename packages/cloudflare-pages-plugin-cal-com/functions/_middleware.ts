@@ -20,7 +20,7 @@ export enum Emoji {
 const PREFIX = `[${Emoji.SpeakingHead} cal.com webhooks plugin]`
 
 /**
- * Environment variables used by this Cloudflare Pages Functions plugin.
+ * Environment variables used by this plugin.
  */
 export interface CalComPluginEnv {
   CAL_WEBHOOK_SECRET?: string
@@ -51,7 +51,7 @@ const defaults = {
   shouldValidate: true
 }
 
-export type TelegramPagesPluginFunction<
+export type PluginFunction<
   Env extends CalComPluginEnv = CalComPluginEnv,
   Params extends string = any,
   Data extends Record<string, unknown> = Record<string, unknown>
