@@ -1,6 +1,6 @@
 {
   "name": "@jackdbd/cloudflare-pages-plugin-cal-com",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Cloudflare Pages Functions plugin for cal.com",
   "author": {
     "name": "Giacomo Debidda",
