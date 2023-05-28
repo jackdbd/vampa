@@ -1,0 +1,52 @@
+name: 'Notify of workflow run conclusion'
+
+on:
+  workflow_run:
+    workflows: ['CI', 'Release to npmjs.com']
+    types: [completed]
+
+jobs:
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - name: 💬 Notify Telegram of workflow run FAILURE
+        # https://github.com/appleboy/telegram-action
+        uses: appleboy/telegram-action@v0.1.1
+        # This is a container action, so it must run on Linux (it would fail if
+        # `runs-on` is either `windows-latest` or `macOS-latest`)
+        # https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action#introduction
+        # https://docs.github.com/en/actions/learn-github-actions/expressions#fromjson
+        with:
+          to: ${{ fromJSON(secrets.TELEGRAM).chat_id }}
+          token: ${{ fromJSON(secrets.TELEGRAM).token }}
+          format: html
+          disable_web_page_preview: true
+          message: |
+            <b>⚠️ GitHub workflow failure 💔</b>
+
+            Repository: <a href="${{ github.event.repository.html_url }}">${{ github.event.repository.full_name }}</a>
+
+            Workflow: <a href="${{ github.event.workflow_run.html_url }}">${{ github.event.workflow_run.name }}</a>
+
+            Workflow Run ID: <a href="${{ github.event.workflow_run.html_url }}?check_suite_focus=true">${{ github.event.workflow_run.id }}</a>
+
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: 💬 Notify Telegram of workflow run SUCCESS
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: ${{ fromJSON(secrets.TELEGRAM).chat_id }}
+          token: ${{ fromJSON(secrets.TELEGRAM).token }}
+          format: html
+          disable_web_page_preview: true
+          message: |
+            <b>✅ GitHub workflow success 💖</b>
+
+            Repository: <a href="${{ github.event.repository.html_url }}">${{ github.event.repository.full_name }}</a>
+
+            Workflow: <a href="${{ github.event.workflow_run.html_url }}">${{ github.event.workflow_run.name }}</a>
+
+            Workflow Run ID: <a href="${{ github.event.workflow_run.html_url }}?check_suite_focus=true">${{ github.event.workflow_run.id }}</a>
