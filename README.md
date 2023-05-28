@@ -14,7 +14,7 @@ git clone git@github.com:jackdbd/vampa.git
 cd vampa
 ```
 
-Install all dependencies from npm.js:
+Install all dependencies from npmjs.com:
 
 ```sh
 npm install
@@ -44,7 +44,7 @@ npm run size
 
 ## Release
 
-This monorepo uses [changesets](https://github.com/changesets/changesets) to manage CHANGELOGs and releases on npm.js.
+This monorepo uses [changesets](https://github.com/changesets/changesets) to manage CHANGELOGs and releases on npmjs.com.
 
 When you want to include a change in the CHANGELOG of one or more packages, do the following.
 
@@ -62,8 +62,12 @@ npx changeset add
 npx changeset status
 ```
 
-4: Commit your changes and push them to the remote repository. The [Changesets Release Action](https://github.com/changesets/action) will take care of publishing all affected packages to npm.js.
+4: Commit your changes and push them to the remote repository. The [Changesets Release Action](https://github.com/changesets/action) will create a Pull Request.
 
-In order to work, Changesets Release Action requires that the `GITHUB_TOKEN` has **Read and write permissions** and can create a Pull Request. To set the permissions of the default `GITHUB_TOKEN` used in the workflows of this GitHub repo, go to `Settings` → `Actions` → `General` → `Workflow permissions`.
+⚠️ In order to work, Changesets Release Action requires that the `GITHUB_TOKEN` has **Read and write permissions** and can create a Pull Request. To set the permissions of the default `GITHUB_TOKEN` used in the workflows of this GitHub repo, go to `Settings` → `Actions` → `General` → `Workflow permissions`.
 
 ![GitHub Workflow permissions required for Changesets Release Action](./assets/images/github-workflow-permissions.png)
+
+5: Once Changesets Release Action has created a Pull Request, you can review it and merge it. Only when you merge this PR, Changesets will publish the packages to npmjs.com.
+
+![PR](./assets/images/changesets-pull-request.png)

@@ -30,6 +30,7 @@
   "scripts": {
     "build": "npx wrangler pages functions build --plugin --outdir ./lib --sourcemap && cp index.d.ts lib/index.d.ts",
     "clean": "rimraf lib/",
+    "dev": "npx wrangler pages functions build --plugin --outdir ./lib --watch",
     "format": "prettier --config ../prettier-config-custom/index.js --write {__tests__,functions}/**/*.{cjs,js,mjs,ts}",
     "lint": "eslint --config ../eslint-config-custom/index.js",
     "size": "pkg-size lib/ --sort-by=brotli --ignore-files {*.d.ts,*.map}",
