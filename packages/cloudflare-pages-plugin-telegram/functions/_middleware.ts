@@ -13,7 +13,7 @@ enum Emoji {
   Notification = '💬'
 }
 
-const PREFIX = `${Emoji.Notification} [telegram-plugin]`
+const PREFIX = `[ ${Emoji.Notification} telegram-plugin]`
 
 const defaultOrProvided = (default_value: boolean, b?: boolean) => {
   if (b === true || b === false) {

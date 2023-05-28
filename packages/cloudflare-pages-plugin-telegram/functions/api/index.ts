@@ -24,7 +24,7 @@ export interface Client {
   sendMessage: SendMessage
 }
 
-const PREFIX = '💬 [telegram-plugin]'
+const PREFIX = '[💬 telegram-plugin]'
 
 export const makeSendTelegramMessage = (config: Config) => {
   const { chat_id, token, disable_notification, disable_web_page_preview } =

@@ -46,5 +46,8 @@ jobs:
       - name: 📦 Build all packages
         run: npm run build
 
+      - name: 🔍 Test @jackdbd/cloudflare-pages-plugin-cal-com
+        run: npx turbo run test --filter cloudflare-pages-plugin-cal-com
+
       - name: 🔍 Test @jackdbd/cloudflare-pages-plugin-telegram
         run: npx turbo run test --filter cloudflare-pages-plugin-telegram

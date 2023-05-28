@@ -17,7 +17,7 @@
     "lint": "turbo run lint",
     "publish": "npm run build && npx changeset publish",
     "size": "turbo run size --filter=./packages/* --concurrency=1",
-    "test": "turbo run test"
+    "test": "turbo run test --concurrency=1"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
@@ -25,6 +25,7 @@
     "@turbo/gen": "^1.9.9",
     "eslint": "^8.41.0",
     "eslint-config-custom": "*",
+    "jest": "^29.5.0",
     "pkg-size": "^2.4.0",
     "prettier": "^2.8.8",
     "prettier-config-custom": "*",

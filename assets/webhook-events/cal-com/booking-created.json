@@ -1,0 +1,94 @@
+{
+  "triggerEvent": "BOOKING_CREATED",
+  "createdAt": "2023-05-24T09:30:00.538Z",
+  "payload": {
+    "type": "60min",
+    "title": "60min between Pro Example and John Doe",
+    "description": "",
+    "additionalNotes": "",
+    "customInputs": {},
+    "startTime": "2023-05-25T09:30:00Z",
+    "endTime": "2023-05-25T10:30:00Z",
+    "organizer": {
+      "id": 5,
+      "name": "Pro Example",
+      "email": "pro@example.com",
+      "username": "pro",
+      "timeZone": "Asia/Kolkata",
+      "language": {
+        "locale": "en"
+      },
+      "timeFormat": "h:mma"
+    },
+    "responses": {
+      "name": {
+        "label": "your_name",
+        "value": "John Doe"
+      },
+      "email": {
+        "label": "email_address",
+        "value": "john.doe@example.com"
+      },
+      "location": {
+        "label": "location",
+        "value": {
+          "optionValue": "",
+          "value": "inPerson"
+        }
+      },
+      "notes": {
+        "label": "additional_notes"
+      },
+      "guests": {
+        "label": "additional_guests"
+      },
+      "rescheduleReason": {
+        "label": "reschedule_reason"
+      }
+    },
+    "userFieldsResponses": {},
+    "attendees": [
+      {
+        "email": "john.doe@example.com",
+        "name": "John Doe",
+        "timeZone": "Asia/Kolkata",
+        "language": {
+          "locale": "en"
+        }
+      }
+    ],
+    "location": "Calcom HQ",
+    "destinationCalendar": {
+      "id": 10,
+      "integration": "apple_calendar",
+      "externalId": "https://caldav.icloud.com/1234567/calendars/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/",
+      "userId": 5,
+      "eventTypeId": null,
+      "credentialId": 1
+    },
+    "hideCalendarNotes": false,
+    "requiresConfirmation": null,
+    "eventTypeId": 7,
+    "seatsShowAttendees": true,
+    "seatsPerTimeSlot": null,
+    "uid": "bFJeNb2uX8ANpT3JL5EfXw",
+    "appsStatus": [
+      {
+        "appName": "Apple Calendar",
+        "type": "apple_calendar",
+        "success": 1,
+        "failures": 0,
+        "errors": [],
+        "warnings": []
+      }
+    ],
+    "eventTitle": "60min",
+    "eventDescription": "",
+    "price": 0,
+    "currency": "usd",
+    "length": 60,
+    "bookingId": 91,
+    "metadata": {},
+    "status": "ACCEPTED"
+  }
+}

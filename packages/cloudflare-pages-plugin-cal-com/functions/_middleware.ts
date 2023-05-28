@@ -162,7 +162,7 @@ export const calComPlugin = <E extends CalComPluginEnv = CalComPluginEnv>(
       if (!result.success) {
         const err = fromZodError(result.error)
         console.log({
-          message: `${PREFIX} ${err.name}: ${err.message}`
+          message: `${PREFIX} ${err.message}`
         })
         return badRequest('invalid cal.com webhook event (invalid schema)')
       }

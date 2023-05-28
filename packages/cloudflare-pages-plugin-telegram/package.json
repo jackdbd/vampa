@@ -17,6 +17,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -34,7 +35,7 @@
     "format": "prettier --config ../prettier-config-custom/index.js --write {__tests__,functions}/**/*.{cjs,js,mjs,ts}",
     "lint": "eslint --config ../eslint-config-custom/index.js",
     "size": "pkg-size lib/ --sort-by=brotli --ignore-files {*.d.ts,*.map}",
-    "test": "true"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
     "@jackdbd/telegram-text-messages": "^1.2.0"
