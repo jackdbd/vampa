@@ -19,7 +19,6 @@
     "size": "turbo run size --filter=./packages/* --concurrency=1",
     "test": "turbo run test"
   },
-  "dependencies": {},
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
     "@cloudflare/workers-types": "^4.20230518.0",

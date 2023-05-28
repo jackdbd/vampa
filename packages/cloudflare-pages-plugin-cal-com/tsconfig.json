@@ -1,0 +1,16 @@
+{
+  // https://www.typescriptlang.org/tsconfig
+  "compilerOptions": {
+    // "declaration": false,
+    // "declarationMap": true,
+    // "emitDeclarationOnly": true,
+    "lib": ["ES2020"],
+    "module": "CommonJS",
+    "noEmit": true,
+    "outDir": "./lib",
+    "rootDir": "./functions",
+    "target": "ES2020",
+    "types": ["@cloudflare/workers-types"]
+  },
+  "include": ["./functions/**/.ts"]
+}

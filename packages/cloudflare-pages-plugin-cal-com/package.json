@@ -1,0 +1,45 @@
+{
+  "name": "@jackdbd/cloudflare-pages-plugin-cal-com",
+  "version": "0.0.0",
+  "description": "Cloudflare Pages Functions plugin for cal.com",
+  "author": {
+    "name": "Giacomo Debidda",
+    "email": "giacomo@giacomodebidda.com",
+    "url": "https://www.giacomodebidda.com/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cal.com",
+    "cloudflare",
+    "plugin",
+    "webhooks"
+  ],
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "lib/index.js",
+    "lib/index.js.map",
+    "lib/index.d.ts"
+  ],
+  "scripts": {
+    "build": "npx wrangler pages functions build --plugin --outdir ./lib --sourcemap && cp index.d.ts lib/index.d.ts",
+    "clean": "rimraf lib/",
+    "dev": "npx wrangler pages functions build --plugin --outdir ./lib --watch",
+    "format": "prettier --config ../prettier-config-custom/index.js --write {__tests__,functions}/**/*.{cjs,js,mjs,ts}",
+    "lint": "eslint --config ../eslint-config-custom/index.js",
+    "size": "pkg-size lib/ --sort-by=brotli --ignore-files {*.d.ts,*.map}",
+    "test": "true"
+  },
+  "dependencies": {
+    "zod": "^3.21.4",
+    "zod-validation-error": "^1.3.0"
+  }
+}
