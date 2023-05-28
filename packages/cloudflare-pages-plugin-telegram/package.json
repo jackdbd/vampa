@@ -1,6 +1,6 @@
 {
   "name": "@jackdbd/cloudflare-pages-plugin-telegram",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cloudflare Pages Functions plugin for Telegram",
   "author": {
     "name": "Giacomo Debidda",
