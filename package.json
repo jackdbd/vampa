@@ -1,0 +1,37 @@
+{
+  "name": "vampa",
+  "version": "0.0.0",
+  "description": "My Cloudflare Pages Functions plugins & Hono middlewares",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "npm@9.6.6",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "format": "turbo run format",
+    "lint": "turbo run lint",
+    "publish": "npm run build && npx changeset publish",
+    "size": "turbo run size --filter=./packages/* --concurrency=1",
+    "test": "turbo run test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@cloudflare/workers-types": "^4.20230518.0",
+    "@turbo/gen": "^1.9.9",
+    "eslint": "^8.41.0",
+    "eslint-config-custom": "*",
+    "pkg-size": "^2.4.0",
+    "prettier": "^2.8.8",
+    "prettier-config-custom": "*",
+    "rimraf": "^5.0.1",
+    "turbo": "^1.9.9",
+    "typescript": "^5.0.4",
+    "wrangler": "^2.20.0"
+  }
+}

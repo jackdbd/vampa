@@ -1,0 +1,19 @@
+# dependencies
+**/node_modules/
+
+# environment variables
+**/.envrc
+
+# secrets
+secrets/*
+!secrets/README.md
+
+# build outputs (bundle JS, TypeScript type definitions, source maps)
+**/dist/
+**/lib/
+
+# Turborepo logs
+**/.turbo/
+
+# test coverage
+**/coverage/

@@ -1,0 +1,43 @@
+{
+  "name": "@jackdbd/cloudflare-pages-plugin-telegram",
+  "version": "0.1.0",
+  "description": "Cloudflare Pages Functions plugin for Telegram",
+  "author": {
+    "name": "Giacomo Debidda",
+    "email": "giacomo@giacomodebidda.com",
+    "url": "https://www.giacomodebidda.com/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cloudflare",
+    "plugin",
+    "telegram"
+  ],
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "lib/index.js",
+    "lib/index.js.map",
+    "lib/index.d.ts"
+  ],
+  "scripts": {
+    "build": "npx wrangler pages functions build --plugin --outdir ./lib --sourcemap && cp index.d.ts lib/index.d.ts",
+    "clean": "rimraf lib/",
+    "format": "prettier --config ../prettier-config-custom/index.js --write {__tests__,functions}/**/*.{cjs,js,mjs,ts}",
+    "lint": "eslint --config ../eslint-config-custom/index.js",
+    "size": "pkg-size lib/ --sort-by=brotli --ignore-files {*.d.ts,*.map}",
+    "test": "true"
+  },
+  "dependencies": {
+    "@jackdbd/telegram-text-messages": "^1.2.0"
+  },
+  "peerDependencies": {},
+  "devDependencies": {}
+}

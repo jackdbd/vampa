@@ -1,0 +1,42 @@
+name: 'Release to npmjs.com'
+
+on:
+  push:
+    branches:
+      - canary
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛎️ Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Setup Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+
+      - name: ⬇️ Install Dependencies
+        run: npm ci
+
+      - name: 🛡️ Audit dependencies (audit-level high)
+        # https://docs.npmjs.com/cli/v8/commands/npm-audit#audit-level
+        run: npm audit --audit-level high
+
+      - name: 📦 Build all packages
+        run: npm run build
+
+      - name: Create Release Pull Request or Publish to npm.js
+        # https://github.com/changesets/action
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: npm run publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
