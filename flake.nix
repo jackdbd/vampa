@@ -38,7 +38,6 @@
         nativeBuildInputs = [];
         buildInputs = [];
         packages = with pkgs; [node2nix nodejs zx];
-
         shellHook = ''
           echo "🌐 personal website dev shell"
           echo "- Node.js $(node --version)"
@@ -47,10 +46,7 @@
           export TELEGRAM=$(cat /run/secrets/telegram/personal_bot);
         '';
 
-        # DEBUG = "";
-        # DEBUG = "eleventy-plugin-text-to-speech/*,-eleventy-plugin-text-to-speech/transforms";
-        # GOOGLE_APPLICATION_CREDENTIALS = "/run/secrets/prj-kitchen-sink/sa-storage-uploader";
-
+        # DEBUG = "*";
         # NODE_DEBUG = "*";
         # ALWAYS set NODE_ENV to production
         # https://youtu.be/HMM7GJC5E2o?si=RaVgw65WMOXDpHT2

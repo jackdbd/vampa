@@ -17,16 +17,15 @@ jobs:
         # Test all packages with:
         # 1. Active LTS
         # 2. Current (i.e. the latest Node.js version available)
-        # Consider testing also against Maintenance LTS
-        # https://nodejs.org/en/
-        # https://nodejs.org/en/about/releases/
-        node: ['18.16.0', 'current']
+        # Production applications should only use Active LTS or Maintenance LTS releases.
+        # https://nodejs.org/en/about/previous-releases
+        node: ['lts/Hydrogen', 'lts/Iron', 'current']
     steps:
       - name: 🛎️ Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: ⚙️ Set up Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
 

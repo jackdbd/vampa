@@ -1,33 +1,4 @@
 {
-  "editor.formatOnSave": false,
-  // The extension pflannery.vscode-versionlens works only if the file type
-  // associated to package.json is json, not jsonc.
-  // For tsconfig files we can use jsonc without issues.
-  // https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens
-  "files.associations": {
-    "packages/**/package.json": "json",
-    "packages/tsconfig/*.json": "jsonc",
-    "plugins/**/package.json": "json",
-    "plugins/**/tsconfig.json": "jsonc"
-  },
-  "files.exclude": {
-    "**/node_modules/": true
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[markdown]": {
-    "editor.suggestOnTriggerCharacters": false
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
   // https://github.com/prettier/prettier-vscode#prettierconfigpath
   "prettier.configPath": "packages/prettier-config-custom/index.js",
   "prettier.requireConfig": true,

@@ -17,7 +17,7 @@ cd vampa
 Install all dependencies from npmjs.com:
 
 ```sh
-npm install
+npm install --include dev
 ```
 
 ## Development
