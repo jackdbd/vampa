@@ -1,9 +1,6 @@
 # dependencies
 **/node_modules/
 
-# environment variables
-**/.envrc
-
 # secrets
 secrets/*
 !secrets/README.md
