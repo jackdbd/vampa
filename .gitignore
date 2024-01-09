@@ -12,5 +12,8 @@ secrets/*
 # Turborepo logs
 **/.turbo/
 
+# wrangler tmp files
+**/.wrangler/
+
 # test coverage
 **/coverage/

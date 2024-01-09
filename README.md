@@ -17,7 +17,7 @@ cd vampa
 Install all dependencies from npmjs.com:
 
 ```sh
-npm install
+npm install --include dev
 ```
 
 ## Development
@@ -54,9 +54,9 @@ When you want to include a change in the CHANGELOG of one or more packages, do t
 npx changeset add
 ```
 
-2: Select which packages are affected by this change, and whether this change causes a major/minor/patch version bump.
+2: Select which packages are affected by this change, and whether this change represents a major/minor/patch version bump.
 
-3: Double check the generated markdown file in the [.changeset](./.changeset/README.md) folder. This file will be consumed by changesets when generiting the next release. You can also double check whether changesets will trigger a major/minor/patch version bump using this command:
+3: Double check the generated markdown file in the [.changeset](./.changeset/README.md) folder. This file will be consumed by changesets when generating the next release. You can also double check whether changesets will trigger a major/minor/patch version bump using this command:
 
 ```sh
 npx changeset status

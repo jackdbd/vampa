@@ -7,7 +7,7 @@ const onRequestPost = [plugin(pluginArgs)]
 // console.log(`=== self ===`, self)
 
 // TODO: this is very hacky and incomplete, but I couldn't figure out how to
-// implement the worker context
+// implement the worker context. Also, move this test utils to a standalone package.
 
 const bind = (worker_ctx) => {
   // console.log(`bind worker_ctx`, worker_ctx)
