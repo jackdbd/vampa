@@ -32,6 +32,6 @@
     "rimraf": "^5.0.1",
     "turbo": "^1.9.9",
     "typescript": "^5.0.4",
-    "wrangler": "^2.20.0"
+    "wrangler": "^2.20.1"
   }
 }
