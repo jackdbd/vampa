@@ -22,7 +22,7 @@ jobs:
           node-version: 20.x
 
       - name: ⬇️ Install Dependencies
-        run: npm ci
+        run: npm ci && npm install -D prettier wrangler
 
       - name: 🛡️ Audit dependencies (audit-level high)
         # https://docs.npmjs.com/cli/v8/commands/npm-audit#audit-level

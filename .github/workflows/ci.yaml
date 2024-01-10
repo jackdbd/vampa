@@ -30,7 +30,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: ⬇️ Install dependencies
-        run: npm ci
+        run: npm ci && npm install -D prettier wrangler
 
       - name: 🛡️ Audit dependencies (audit-level high)
         if: ${{ matrix.os }} == 'ubuntu-latest'
